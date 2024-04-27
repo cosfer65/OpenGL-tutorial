@@ -3,7 +3,7 @@
 #include "cg_util.h"
 #include "cg_primitives.h"
 
-// #define __WIREFRAME_DRAW__
+#define __WIREFRAME_DRAW__
 
 using namespace atlas;
 
@@ -25,7 +25,7 @@ public:
     }
     virtual int init_game() {
         // zoom is the angle of the field of view
-        m_view->set_fov(dtr(15));
+        m_view->set_fov(dtr(25));
         // camera position, look at point, and up vector orientation
         m_cam = new cg_camera(vec3(0, 0, -20), vec3(0, 0, 0), vec3(0, 1, 0));
 
@@ -46,11 +46,8 @@ public:
 
         // create a simple cube
         simple_cube = new cg_gl_cube;
-        simple_cube->set_scale(atlas::vec3(0.5, 0.5, 0.5));
+        simple_cube->set_scale(atlas::vec3(0.5, 1.5, 0.5));
         simple_globe = new cg_gl_sphere(0.5);
-
-        
-
 
 #ifdef __WIREFRAME_DRAW__
         simple_cube->create(GL_LINE);

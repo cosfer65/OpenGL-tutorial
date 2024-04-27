@@ -45,3 +45,5 @@
 *.res
 *.lastbuildstate
 *.tlog
+.vs/opengltut/v16/.suo
+*.ipch
